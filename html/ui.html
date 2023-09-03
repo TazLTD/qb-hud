@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TDE-HUD</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: rgba(0, 0, 0, 0)">
+    <div class="mainWrapper">
+      <div class="wrapper">
+        <div class="gray-glow">
+          <div class="black-border">
+            <div id="mic" class="green">
+              <div id="mic-progress" class="progress">
+                <svg class="statusIcon" width="40" height="40">
+                  <image
+                    id="mic-default-image"
+                    href="svg/mic.svg"
+                    height="20"
+                    width="20"
+                    x="15"
+                    y="15"
+                  ></image>
+                  <image
+                    id="mic-big-image"
+                    href="svg/mic.svg"
+                    height="30"
+                    width="30"
+                    x="10"
+                    y="8"
+                    style="display: none"
+                  ></image>
+                </svg>
+                <div id="mic-inner" class="inner">
+                  <div id="mic-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="green-glow">
+          <div class="black-border">
+            <div id="health" class="green">
+              <div id="health-progress" class="progress">
+                <svg class="statusIcon" width="45" height="45">
+                  <image
+                    id="health-default-image"
+                    href="svg/health.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                  <image
+                    id="health-big-image"
+                    href="svg/health.svg"
+                    height="28"
+                    width="28"
+                    x="10"
+                    y="8"
+                    style="display: none"
+                  ></image>
+                </svg>
+                <div id="health-inner" class="inner">
+                  <div id="health-percent" class="percent"></div>
+                  <div id="health-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brown-glow">
+          <div class="black-border">
+            <div id="armor" class="green">
+              <div id="armor-progress" class="progress">
+                <svg class="statusIcon" width="45" height="45">
+                  <image
+                    id="armor-default-image"
+                    href="svg/armor.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                  <image
+                    id="armor-big-image"
+                    href="svg/armor.svg"
+                    height="28"
+                    width="28"
+                    x="10"
+                    y="8"
+                    style="display: none"
+                  ></image>
+                </svg>
+                <div id="armor-inner" class="inner">
+                  <div id="armor-percent" class="percent"></div>
+                  <div id="armor-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="orange-glow">
+          <div class="black-border">
+            <div id="hunger" class="green">
+              <div id="hunger-progress" class="progress">
+                <svg class="statusIcon" width="45" height="45">
+                  <image
+                    id="hunger-default-image"
+                    href="svg/hunger.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                  <image
+                    id="hunger-big-image"
+                    href="svg/hunger.svg"
+                    height="28"
+                    width="5"
+                    x="10"
+                    y="8"
+                    style="display: none"
+                  ></image>
+                </svg>
+                <div id="hunger-inner" class="inner">
+                  <div id="hunger-percent" class="percent"></div>
+                  <div id="hunger-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blue-glow">
+          <div class="black-border">
+            <div id="thirst" class="green">
+              <div id="thirst-progress" class="progress">
+                <svg class="statusIcon" width="45" height="45">
+                  <image
+                    id="thirst-default-image"
+                    href="svg/thirst.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                  <image
+                    id="thirst-big-image"
+                    href="svg/thirst.svg"
+                    height="28"
+                    width="28"
+                    x="10"
+                    y="8"
+                    style="display: none"
+                  ></image>
+                </svg>
+                <div id="thirst-inner" class="inner">
+                  <div id="thirst-percent" class="percent"></div>
+                  <div id="thirst-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="red-glow">
+          <div class="black-border">
+            <div id="stress" class="green">
+              <div id="stress-progress" class="progress">
+                <svg class="statusIcon" width="40" height="40">
+                  <image
+                    href="svg/stress.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                </svg>
+                <div id="stress-inner" class="inner">
+                  <div id="stress-percent" class="percent"></div>
+                  <div id="stress-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pink-glow">
+          <div class="black-border">
+            <div id="nos" class="green">
+              <div id="nos-progress" class="progress">
+                <svg class="statusIcon" width="40" height="40">
+                  <image
+                    href="svg/nos.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                </svg>
+                <div id="nos-inner" class="inner">
+                  <div id="nos-percent" class="percent"></div>
+                  <div id="nos-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lightblue-glow">
+          <div class="black-border">
+            <div id="oxygen" class="green">
+              <div id="oxygen-progress" class="progress">
+                <svg class="statusIcon" width="40" height="40">
+                  <image
+                    href="svg/oxygen.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                </svg>
+                <div id="oxygen-inner" class="inner">
+                  <div id="oxygen-percent" class="percent"></div>
+                  <div id="oxygen-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lightblue-glow">
+          <div class="black-border">
+            <div id="stamina" class="green">
+              <div id="stamina-progress" class="progress">
+                <svg class="statusIcon" width="40" height="40">
+                  <image
+                    href="svg/stamina.svg"
+                    height="20"
+                    width="20"
+                    x="14"
+                    y="15"
+                  ></image>
+                </svg>
+                <div id="stamina-inner" class="inner">
+                  <div id="stamina-percent" class="percent"></div>
+                  <div id="stamina-water" class="water"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="ui-car-container">
+        <div class="ui-car-otherinfo">
+          <div class="counter">
+            <div class="counter2">
+              <div class="speedometer">
+                <svg class="circle" width="50" height="50">
+                  <circle
+                    class="backgroundCircle2"
+                    stroke="#FFF"
+                    stroke-width="3.5"
+                    style="stroke-opacity: 0.4"
+                    fill="transparent"
+                    r="18"
+                    cx="25"
+                    cy="25"
+                    stroke-dasharray="55 45"
+                    stroke-dashoffset="0"
+                  />
+                  <circle
+                    class="carprogress carprogress-speed"
+                    stroke="#FFF"
+                    stroke-width="3.5"
+                    style="stroke-opacity: 1"
+                    fill="transparent"
+                    r="18"
+                    cx="25"
+                    cy="25"
+                    stroke-dasharray="70 30"
+                    stroke-dashoffset="0"
+                  />
+                </svg>
+                <div class="text">
+                  <span class="speed"></span>
+                  <!--<div class="mph">KMH</div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="addon">
+            <div class="fuel">
+              <svg class="circle" width="40" height="40">
+                <circle
+                  class="backgroundCircle2"
+                  stroke="#FFF"
+                  stroke-width="3.5"
+                  style="stroke-opacity: 0.4"
+                  fill="transparent"
+                  r="18"
+                  cx="20"
+                  cy="20"
+                  stroke-dasharray="70 30"
+                  stroke-dashoffset="0"
+                />
+                <circle
+                  class="carprogress progress-fuel"
+                  stroke="#FFF"
+                  stroke-width="3.7"
+                  style="stroke-opacity: 1"
+                  fill="transparent"
+                  r="18"
+                  cx="20"
+                  cy="20"
+                  stroke-dasharray="70 30"
+                  stroke-dashoffset="0"
+                />
+                <image
+                  href="png/fuel.png"
+                  height="20"
+                  width="20"
+                  x="10"
+                  y="10"
+                ></image>
+              </svg>
+            </div>
+            <div class="car-seatbelt-info">
+              <img src="png/belt.png" />
+            </div>
+          </div>
+
+          <div class="air-alt">
+            <svg class="circle" width="50" height="50">
+              <circle
+                class="backgroundCircle2"
+                stroke="#FFF"
+                stroke-width="3.5"
+                style="stroke-opacity: 0.4"
+                fill="transparent"
+                r="18"
+                cx="25"
+                cy="25"
+                stroke-dasharray="75 45"
+                stroke-dashoffset="0"
+              />
+              <circle
+                class="progress-alt"
+                stroke="#FFF"
+                stroke-width="3.5"
+                style="stroke-opacity: 1"
+                fill="transparent"
+                r="18"
+                cx="25"
+                cy="25"
+                stroke-dasharray="75 45"
+                stroke-dashoffset="0"
+              />
+            </svg>
+          </div>
+
+          <div class="text-alt">
+            <span id="altspantext" class="speed-alt"></span>
+            <div class="mph">ALT</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hudmenu" class="hud-menu">
+        <h2>HUD SETTINGS</h2>
+        <div class="hud-menu-content">
+          <div class="row">
+            <div class="column">
+              <div class="minimap">
+                <input
+                  id="minimap_1_checkbox"
+                  type="checkbox"
+                  class="hud-checkbox"
+                />
+                <label class="checkbox-label" for="coding"
+                  >Правоъгълен minimap</label
+                >
+              </div>
+              <div class="minimap">
+                <input
+                  id="houseblips_checkbox"
+                  type="checkbox"
+                  class="hud-checkbox"
+                />
+                <label class="checkbox-label" for="coding"
+                  >Блипове на имоти</label
+                >
+              </div>
+              <div class="minimap">
+                <input
+                  id="gasblips_checkbox"
+                  type="checkbox"
+                  class="hud-checkbox"
+                />
+                <label class="checkbox-label" for="coding"
+                  >Блипове на бензиностанции</label
+                >
+              </div>
+            </div>
+            <div class="column">
+              <div class="minimap">
+                <input
+                  id="minimap_2_checkbox"
+                  type="checkbox"
+                  class="hud-checkbox"
+                />
+                <label class="checkbox-label" for="coding"
+                  >Кръгъл minimap</label
+                >
+              </div>
+              <div class="minimap">
+                <input
+                  id="shopblips_checkbox"
+                  type="checkbox"
+                  class="hud-checkbox"
+                />
+                <label class="checkbox-label" for="coding"
+                  >Блипове на магазини</label
+                >
+              </div>
+              <div class="minimap">
+                <input
+                  id="alwaysminimap_checkbox"
+                  type="checkbox"
+                  class="hud-checkbox"
+                />
+                <label class="checkbox-label" for="coding"
+                  >Винаги показвай минимап</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <a id="hud-save-btn" class="hud-save-btn">Запази</a>
+      </div>
+    </div>
+
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
